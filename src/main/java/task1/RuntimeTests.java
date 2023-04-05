@@ -4,7 +4,7 @@ public class RuntimeTests extends Thread {
 
 
     public static void main(String[] args) {
-        long time = System.currentTimeMillis();
+        long time = System.currentTimeMillis()/1000;
 
         Thread thread1 = new Thread(new Runnable() {
             @Override
@@ -12,7 +12,7 @@ public class RuntimeTests extends Thread {
                 while (true) {
 
                     try {
-                        System.out.println(System.currentTimeMillis() - time + ": мілісекунд минуло");
+                        System.out.println((System.currentTimeMillis()/1000) - time + ": мілісекунд минуло");
                         Thread.sleep(1000l);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
